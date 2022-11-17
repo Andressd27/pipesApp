@@ -1,10 +1,12 @@
 
-
+<div class="text-layoout">
+  <h1>{{ nombre | titlecase }}</h1>
+  <h1>{{ valor  | number }}</h1>
+  <h1>{{ obj    | json }}</h1>
+</div>
 <!-- Lo que se espera siempre dentro de dos llaves {{}} es una expresion de javascript -->
-<h1>{{ nombre | titlecase }}</h1>
-<h1>{{ valor  | number }}</h1>
-<h1>{{ obj    | json }}</h1>
 
-<button (click)="mostrarNombre()">
-  Cambiar nombre
+<button pButton 
+        (click)="mostrarNombre()"
+        label="Cambiar Nombre">
 </button>
