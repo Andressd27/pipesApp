@@ -32,7 +32,7 @@ export class OrdenarComponent  {
     },
     {
       name:   'Linterna Verde',
-      canFly: false,
+      canFly: true,
       color:  Color.green
     }
   ]

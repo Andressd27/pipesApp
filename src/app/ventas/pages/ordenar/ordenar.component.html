@@ -35,7 +35,7 @@
 <div class="grid">
     <div class="col mt-2">
         <p-panel header="Héroes">
-            <p-table [value]="heroes" responsiveLayout="scroll" [tableStyle]="{'min-width': '50rem'}">
+            <p-table [value]="heroes | sortBy:'color'" responsiveLayout="scroll" [tableStyle]="{'min-width': '50rem'}">
                 <ng-template pTemplate="header">
                     <tr>
                         <th>Nombre</th>
@@ -46,7 +46,7 @@
                 <ng-template pTemplate="body" let-hero>
                     <tr>
                         <td>{{ hero.name }}</td>
-                        <td>{{ hero.canFly }}</td>
+                        <td>{{ hero.canFly | canFly }}</td>
                         <td>{{ hero.color }}</td>
                     </tr>
                 </ng-template>
