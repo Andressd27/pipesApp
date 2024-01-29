@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Color, Hero } from '../../interfaces/hero.interfaces';
 
 @Component({
@@ -8,6 +8,8 @@ import { Color, Hero } from '../../interfaces/hero.interfaces';
 })
 export class OrdenarComponent  {
   public isUpperCase: boolean = false;
+  public orderBy?: keyof Hero;
+  public order: boolean = true;
 
   public heroes: Hero[] = [
     {
@@ -39,5 +41,11 @@ export class OrdenarComponent  {
 
   toggleUppeCase():void{
     this.isUpperCase = !this.isUpperCase;
+  }
+
+  changeOrder( value: keyof Hero ): void {
+    this.orderBy === value
+      ? this.order = !this.order
+      : (this.orderBy = value, this.order = true)
   }
 }
